@@ -1,0 +1,85 @@
+{
+  "State": {
+    "v": 1,
+    "ts": "2024-11-27T03:15:59.981831+00:00",
+    "id": "1efac6de-d069-6452-8008-1bfaeda13008",
+    "channel_values": {
+      "messages": [
+        {
+          "type": "HumanMessage",
+          "content": "Add 4 and 5.",
+          "id": "a0847524-6ebc-4af1-b0cc-c1a940868436"
+        },
+        {
+          "type": "AIMessage",
+          "content": "",
+          "id": "run-a017179d-6800-4c5c-9a3f-4ea8be846ecc-0",
+          "tool_calls": [
+            {
+              "id": "call_3wWfIK4HShocDih6rInNaoCT",
+              "function": {
+                "name": "add",
+                "arguments": "{\"a\":4,\"b\":5}"
+              }
+            }
+          ]
+        },
+        {
+          "type": "ToolMessage",
+          "content": "9",
+          "name": "add",
+          "id": "8fbc6e9b-13c2-46c6-bbc8-598a47135507"
+        },
+        {
+          "type": "AIMessage",
+          "content": "The sum of 4 and 5 is 9.",
+          "id": "run-01746486-5d53-4610-8b27-96c761f42a2d-0"
+        },
+        {
+          "type": "HumanMessage",
+          "content": "Multiply that by 2.",
+          "id": "a22d1f73-aa7a-40c5-bdb4-1708b5309e3a"
+        },
+        {
+          "type": "AIMessage",
+          "content": "",
+          "id": "run-28e64414-b804-4ab9-9969-df432b9b501c-0",
+          "tool_calls": [
+            {
+              "id": "call_yHK1Lu6xtG7ADnbKW74Rl3aJ",
+              "function": {
+                "name": "multiply",
+                "arguments": "{\"a\":9,\"b\":2}"
+              }
+            }
+          ]
+        },
+        {
+          "type": "ToolMessage",
+          "content": "18",
+          "name": "multiply",
+          "id": "e3b35b86-bf60-4040-903a-9be011afbd1e"
+        },
+        {
+          "type": "AIMessage",
+          "content": "Multiplying 9 by 2 gives 18.",
+          "id": "run-9ac3de0c-1705-4999-83ff-18237c8f1979-0"
+        }
+      ],
+      "assistant": "assistant"
+    }
+  },
+  "Metadata": {
+    "source": "loop",
+    "thread_id": "101",
+    "step": 8,
+    "parents": {}
+  },
+  "Parent_Config": {
+    "configurable": {
+      "thread_id": "101",
+      "checkpoint_ns": "",
+      "checkpoint_id": "1efac6de-9729-6983-8007-2ca69002abe9"
+    }
+  }
+}

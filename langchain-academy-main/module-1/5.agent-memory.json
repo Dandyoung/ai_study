@@ -1,0 +1,105 @@
+{
+  "State": {
+    "v": 1,
+    "ts": "2024-11-27T03:15:16.135158+00:00",
+    "id": "1efac6dd-2e41-6b15-8003-05c7af176268",
+    "channel_values": {
+      "messages": [
+        {
+          "type": "HumanMessage",
+          "content": "Add 4 and 5.",
+          "id": "a0847524-6ebc-4af1-b0cc-c1a940868436",
+          "additional_kwargs": {},
+          "response_metadata": {}
+        },
+        {
+          "type": "AIMessage",
+          "content": "",
+          "id": "run-a017179d-6800-4c5c-9a3f-4ea8be846ecc-0",
+          "additional_kwargs": {
+            "tool_calls": [
+              {
+                "id": "call_3wWfIK4HShocDih6rInNaoCT",
+                "function": {
+                  "arguments": "{\"a\":4,\"b\":5}",
+                  "name": "add"
+                },
+                "type": "function"
+              }
+            ],
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 17,
+              "prompt_tokens": 132,
+              "total_tokens": 149,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "model_name": "gpt-4o-2024-08-06",
+            "system_fingerprint": "fp_7f6be3efb0",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          }
+        },
+        {
+          "type": "ToolMessage",
+          "content": "9",
+          "name": "add",
+          "id": "8fbc6e9b-13c2-46c6-bbc8-598a47135507",
+          "tool_call_id": "call_3wWfIK4HShocDih6rInNaoCT"
+        },
+        {
+          "type": "AIMessage",
+          "content": "The sum of 4 and 5 is 9.",
+          "id": "run-01746486-5d53-4610-8b27-96c761f42a2d-0",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 13,
+              "prompt_tokens": 157,
+              "total_tokens": 170
+            },
+            "model_name": "gpt-4o-2024-08-06",
+            "system_fingerprint": "fp_7f6be3efb0",
+            "finish_reason": "stop",
+            "logprobs": null
+          }
+        }
+      ],
+      "assistant": "assistant"
+    },
+    "channel_versions": {
+      "__start__": "00000000000000000000000000000002.0.9319910289612291",
+      "messages": "00000000000000000000000000000005.0.6039731148617695",
+      "start:assistant": "00000000000000000000000000000003.0.13240443219058629",
+      "assistant": "00000000000000000000000000000005.0.5601303936786866",
+      "branch:assistant:tools_condition:tools": "00000000000000000000000000000004.0.04513341052876607",
+      "tools": "00000000000000000000000000000005.0.6396171044234202"
+    }
+  },
+  "Metadata": {
+    "source": "loop",
+    "thread_id": "101",
+    "step": 3,
+    "parents": {}
+  },
+  "Parent_Config": {
+    "configurable": {
+      "thread_id": "101",
+      "checkpoint_ns": "",
+      "checkpoint_id": "1efac6dd-26a3-6201-8002-dce29c736346"
+    }
+  }
+}

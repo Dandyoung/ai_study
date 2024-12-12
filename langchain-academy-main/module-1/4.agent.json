@@ -1,0 +1,85 @@
+{
+    "messages": [
+      {
+        "type": "HumanMessage",
+        "content": "Add 3 and 4. Multiply the output by 2. Divide the output by 5",
+        "id": "0b0fa426-f24f-48ff-92b0-ae0f148f3af1"
+      },
+      {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_V6CtiMTsy2QB2C4S6FTaDIRH",
+            "function": {
+              "name": "add",
+              "arguments": {
+                "a": 3,
+                "b": 4
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "type": "ToolMessage",
+        "content": "7",
+        "name": "add",
+        "id": "7cdea6c4-d2da-4102-8534-e9efd15561b6",
+        "tool_call_id": "call_V6CtiMTsy2QB2C4S6FTaDIRH"
+      },
+      {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_7F3bIp88bfytubPTSC7El8va",
+            "function": {
+              "name": "multiply",
+              "arguments": {
+                "a": 7,
+                "b": 2
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "type": "ToolMessage",
+        "content": "14",
+        "name": "multiply",
+        "id": "02a0edcb-ffb2-454e-ab73-45691e3881d9",
+        "tool_call_id": "call_7F3bIp88bfytubPTSC7El8va"
+      },
+      {
+        "type": "AIMessage",
+        "content": "",
+        "tool_calls": [
+          {
+            "id": "call_IvF4MJekNiOoxhJSLFNdEtD6",
+            "function": {
+              "name": "divide",
+              "arguments": {
+                "a": 14,
+                "b": 5
+              }
+            },
+            "type": "function"
+          }
+        ]
+      },
+      {
+        "type": "ToolMessage",
+        "content": "2.8",
+        "name": "divide",
+        "id": "03355a01-aeff-45b2-abd0-b94ea7160107",
+        "tool_call_id": "call_IvF4MJekNiOoxhJSLFNdEtD6"
+      },
+      {
+        "type": "AIMessage",
+        "content": "The result of adding 3 and 4, multiplying the result by 2, and then dividing by 5 is 2.8."
+      }
+    ]
+  }

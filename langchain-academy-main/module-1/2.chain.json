@@ -1,0 +1,43 @@
+[
+    {
+        "content": "",
+        "tool_calls": [{
+            "name": "get_city",
+            "args": {
+                "city": "대한민국"
+            },
+            "id": "call_teEjsTHWSfiY2iZCb2Bz9Nlx"
+        }],
+        "usage": {
+            "completion_tokens": 15,
+            "prompt_tokens": 98,
+            "total_tokens": 113
+        }
+    },
+
+    {
+        "content": "",
+        "tool_calls": [{
+            "name": "multiply",
+            "args": {
+                "a": 2,
+                "b": 3
+            },
+            "id": "call_WhaN4wW6N10tJLN7OX05kb2v"
+        }],
+        "usage": {
+            "completion_tokens": 17,
+            "prompt_tokens": 94,
+            "total_tokens": 111
+        }
+    }
+    ,
+    {
+        "content": "랭그래프(Rank Graph)는 데이터 시각화 기법 중 하나로, 특정 항목의 순위 변화를 시간의 흐름에 따라 그래프로 나타내는 방법입니다. 이 그래프는 주로 주어진 기간 동안 여러 항목의 순위가 어떻게 변했는지를 비교하고 분석하는 데 사용됩니다. 랭그래프는 주로 스포츠 리그 순위 변화, 주식 시장의 순위 변화, 인기 있는 제품의 순위 변화 등을 시각화하는 데 유용합니다.",
+        "usage": {
+            "completion_tokens": 175,
+            "prompt_tokens": 95,
+            "total_tokens": 270
+        }
+    }
+]

@@ -1,0 +1,118 @@
+[
+    {
+        "input": "\": \"가스터빈 GT GEN#1 KVOLT의 최대값은 얼마인가요?\",\n\"query\": \"SELECT MAX(`GT GEN#1 KVOLT`) FROM data;\"",
+        "query": "\"SELECT AVG(`GT GEN#1 MVAR`) FROM data;\""
+    },
+    {
+        "input": "\"GT#1 Generator Exciter Loss by Curve 값이 가장 큰 시점의 datetime을 알려주세요.\",\n\"query\": \"SELECT datetime FROM data ORDER BY `GT#1 Generator Exciter Loss by Curve` DESC LIMIT 1;\"",
+        "query": "\"SELECT COUNT(*) FROM data WHERE `GT#1 Generator Loss by Power Factor Curve at Design Power Factor and Actual MW` >= 5;\""
+    },
+    {
+        "input": "\"2021년 6월 15일의 GT#1 Generator Power Factor Actual값은 무엇인가요?\",\n\"query\": \"SELECT `GT#1 Generator Power Factor Actual` FROM data WHERE date(datetime) = '2021-06-15';\"",
+        "query": "\"SELECT * FROM data WHERE `GT#1 Generator Hydrogen Pressure` >= 0.5;\""
+    },
+    {
+        "input": "\"GT#1 NG WTR Flow값이 가장높은 상위 5개의 row를 가져와주세요.\",\n\"query\": \"SELECT * FROM data ORDER BY `GT#1 NG WTR Flow` DESC LIMIT 5;\"",
+        "query": "\"SELECT MIN(`GT#1 Fuel Inlet Temperature`), MAX(`GT#1 Fuel Inlet Temperature`) FROM data;\""
+    },
+    {
+        "input": "\"GT#1 NG WTR Enthalpy의 평균값이 얼마인가요?\",\n\"query\": \"SELECT AVG(`GT#1 NG WTR Enthalpy`) FROM data;\"",
+        "query": "\"SELECT datetime, `Q  -TBQB-067 Vibration sensor` FROM data ORDER BY `Q  -TBQB-067 Vibration sensor` DESC LIMIT 1;\""
+    },
+    {
+        "input": "\": \"GT GEN#1 KVOLT 값에 대한 최댓값, 최솟값, 평균값, 중앙값을 알려주세요.\",\n\"query\": \"SELECT MAX(`GT GEN#1 KVOLT`), MIN(`GT GEN#1 KVOLT`), AVG(`GT GEN#1 KVOLT`), MEDIAN(`GT GEN#1 KVOLT`) FROM data;\"",
+        "query": "\"SELECT COUNT(*) FROM data WHERE `GT#1 Generator Efficiency` > 0.8;\""
+    },
+    {
+        "input": "\"GT#1 Generator Power Factor Actual 값이 0.85에서 0.9 사이인 날짜들을 알려주세요.\",\n\"query\": \"SELECT datetime FROM data WHERE `GT#1 Generator Power Factor Actual` BETWEEN 0.85 AND 0.9;\"",
+        "query": "\"SELECT AVG(`GT GEN#1 MVAR`) FROM data WHERE date(datetime) = date('now', '-1 day');\""
+    },
+    {
+        "input": "\"지난달에 GT#1 Generator Loss by Power Factor Curve 값이 가장 높았던 시간을 알려주세요.\",\n\"query\": \"SELECT datetime FROM data WHERE `GT#1 Generator Loss by Power Factor Curve` = (SELECT MAX(`GT#1 Generator Loss by Power Factor Curve`) FROM data WHERE strftime('%m', datetime) = strftime('%m', date('now', '-1 month')));\"",
+        "query": "\"SELECT AVG(`GT#1 % O2 in Exhaust Flue Gas`) FROM data WHERE strftime('%m', datetime) IN ('01', '02', '03') OR strftime('%m', datetime) IN ('04', '05', '06') OR strftime('%m', datetime) IN ('07', '08', '09') OR strftime('%m', datetime) IN ('10', '11', '12') GROUP BY strftime('%m', datetime);\""
+    },
+    {
+        "input": "\"지난해에 GT#1 Fuel Mass Flow의 일별 평균 변화를 확인하고 싶습니다.\",\n\"query\": \"SELECT date(datetime) AS date, AVG(`GT#1 Fuel Mass Flow`) FROM data WHERE strftime('%Y', datetime) = strftime('%Y', date('now', '-1 year')) GROUP BY date;\"",
+        "query": "\"SELECT AVG(`GT#1 Generator Hydrogen Pressure`) FROM data WHERE datetime >= date('now','-6 months');\""
+    },
+    {
+        "input": "\"GT#1 Generator Auxirary (MW)가 가장 높았던 시간을 알 수 있을까요?\",\n\"query\": \"SELECT datetime FROM data ORDER BY `GT#1 Generator Auxirary (MW)` DESC LIMIT 1;\"",
+        "query": "\"SELECT datetime FROM data ORDER BY `GT#1 Compressor Discharge Pressure` DESC LIMIT 1;\""
+    },
+    {
+        "input": "\": \"지난달 가스터빈의 전력 손실이 가장 적었던 날짜와 그 날의 전력 손실량을 알려주세요.\",\n\"query\": \"SELECT datetime, 'GT#1 Generator Electronic Loss' AS Power_Loss FROM data WHERE datetime BETWEEN DATE('now', '-1 month') AND DATE('now') ORDER BY 'GT#1 Generator Electronic Loss' ASC LIMIT 1;\"",
+        "query": "\"SELECT * FROM data WHERE 'GT#1 Generator Efficiency' >= 0.9 AND datetime BETWEEN DATE('now', '-7 day') AND DATE('now');\""
+    },
+    {
+        "input": "\"출구 가스에 포함된 산소량이 가장 높았던 날짜는 언제이고, 그 때의 산소량은 얼마인가요?\",\n\"query\": \"SELECT datetime, 'GT#1 % O2 in Exhaust Flue Gas' AS Oxygen_Level FROM data ORDER BY 'GT#1 % O2 in Exhaust Flue Gas' DESC LIMIT 1;\"",
+        "query": "\"SELECT datetime, 'GT#1 Generator Gross Generation (MW)' AS Total_Power_Supply FROM data ORDER BY datetime DESC LIMIT 1;\""
+    },
+    {
+        "input": "\": \"식별 번호가 '#1'인 발전기의 마지막 3일 동안 관찰된 총 생성 면적은 얼마인가요?\", \n\"query\": \"SELECT SUM('GT#1 Generator Gross Generation (MW)') AS Total_Generation FROM data WHERE datetime > DATE('now', '-3 days');\"",
+        "query": "\"SELECT datetime FROM data ORDER BY 'GT#1 Generator Mechenical Loss' DESC LIMIT 1;\""
+    },
+    {
+        "input": "\"최근 한 주 동안 발전기의 효율이 80% 미만으로 평가된 날이 있나요?\", \n\"query\": \"SELECT datetime FROM data WHERE datetime > DATE('now', '-7 days') AND 'GT#1 Generator Efficiency' < 0.80;\"",
+        "query": "\"SELECT 'GT#1 Fuel Temperature' FROM data ORDER BY datetime DESC LIMIT 1;\""
+    },
+    {
+        "input": "\"지난 달 동안 발전기의 진동 센서에서 가장 높은 진동이 관찰된 날짜는 언제인가요?\",\n\"query\": \"SELECT datetime FROM data WHERE datetime BETWEEN DATE('now', '-1 month') AND DATE('now') ORDER BY 'Max Vibration' DESC LIMIT 1;\"",
+        "query": "\"SELECT 'GT#1 ppm NOx in Exhaust Gas' FROM data ORDER BY datetime DESC LIMIT 1;\""
+    },
+    {
+        "input": "\"지난 5일 동안 발전기의 전자 손실의 총량은 얼마인가요?\",\n\"query\": \"SELECT SUM('GT#1 Generator Electronic Loss') AS Total_Electronic_Loss FROM data WHERE datetime > DATE('now', '-5 days');\"",
+        "query": "\"SELECT SUM('GT#1 Heat Input Actual (HHV)') AS Total_Heat_Input FROM data WHERE datetime > DATE('now', '-1 month');\""
+    },
+    {
+        "input": "\"최근 한 달 동안 GT#1 발전기의 철저한 연료 소비량을 확인할 수 있나요?\",\n\"query\": \"SELECT SUM('GT#1 Fuel Mass Flow') AS Total_Fuel_Consumed FROM data WHERE datetime > DATE('now', '-1 month');\"",
+        "query": "\"SELECT 'GT#1 Compressor Discharge Pressure' FROM data ORDER BY datetime DESC LIMIT 1;\""
+    },
+    {
+        "input": "\": \"2020년 8월 가스터빈 발전기 내부에서 측정된 가장 높은 진동값(max vibration)이 얼마인지 알려주세요.\",\n\"query\": \"SELECT MAX(\\\"Max Vibration\\\") AS max_vibration\nFROM data\nWHERE strftime('%Y-%m', datetime) = '2020-08';\"",
+        "query": "\"SELECT datetime, \\\"GT#1 Generator Efficiency\\\" \nFROM data;\""
+    },
+    {
+        "input": "\"전반적으로 가스터빈 1번의 연료 질량 흐름량(GT#1 Fuel Mass Flow)의 평균은 얼마인지 알려주세요.\",\n\"query\": \"SELECT AVG(\\\"GT#1 Fuel Mass Flow\\\") AS average_flow\nFROM data;\"",
+        "query": "\"SELECT SUM(\\\"GT#1 Generator Electronic Loss\\\") AS total_loss\nFROM data;\""
+    },
+    {
+        "input": "\": \"8월에 GT#1 Generator Efficiency는 최대 값은 얼마인가요?\",\n\"query\": \"SELECT MAX('GT#1 Generator Efficiency') AS max_GT_efficiency FROM data WHERE  strftime('%m', datetime) = '08';\"",
+        "query": "\"SELECT AVG('GT#1 Fuel Mass Flow') AS avg_fuel_mass_flow FROM data WHERE  strftime('%m', datetime) = '12';\""
+    },
+    {
+        "input": "\"발전기 #1 의 가장 높은 진동값은 어느날인가요?\",\n\"query\": \"SELECT datetime FROM data ORDER BY 'Max Vibration' DESC LIMIT 1;\"",
+        "query": "\"SELECT MIN('GT#1 NG WTR Enthalpy') AS min_ng_wtr_enthalpy FROM data WHERE  strftime('%m', datetime) = '06';\""
+    },
+    {
+        "input": "\"7월에 'GT#1 Compressor Discharge Pressure'의 최대값은 얼마인가요?\",\n\"query\": \"SELECT max('GT#1 Compressor Discharge Pressure') AS max_compressor_discharge_pressure FROM data WHERE strftime('%m', datetime) = '07';\"",
+        "query": "\"SELECT AVG('GT#1 Generator Exciter Loss by Curve') AS avg_exciter_loss_curve FROM data;\""
+    },
+    {
+        "input": "\"GT#1 Fuel Mass Flow의 평균값이 가장 큰 달은 언제인가요?\",\n\"query\": \"SELECT strftime('%m', datetime) as month FROM data ORDER BY avg('GT#1 Fuel Mass Flow') DESC LIMIT 1;\"",
+        "query": "\"SELECT datetime, 'GT#1 Generator Electronic Loss' FROM data ORDER BY 'GT#1 Generator Electronic Loss' DESC LIMIT 1;\""
+    },
+    {
+        "input": "\"5월에 GT#1 Inlet Pressure Loss의 최소값은 얼마인가요?\",\n\"query\": \"SELECT MIN('GT#1 Inlet Pressure Loss') AS min_inlet_pressure_loss FROM data WHERE strftime('%m', datetime) = '05';\"",
+        "query": "\"SELECT datetime FROM data ORDER BY 'GT#1 Generator Efficiency' DESC LIMIT 1;\""
+    },
+    {
+        "input": "\": \"GT GEN#1 KVOLT의 평균 값을 구해주세요.\",\n\"query\": \"SELECT AVG('GT GEN#1 KVOLT') FROM data\"",
+        "query": "\"SELECT MAX('GT#1 Generator Efficiency') FROM data\""
+    },
+    {
+        "input": "\"GT#1 Generator Electronic Loss가 가장 높았던 날짜는 언제인가요?\",\n\"query\": \"SELECT datetime FROM data WHERE 'GT#1 Generator Electronic Loss' = (SELECT MAX('GT#1 Generator Electronic Loss') FROM data)\"",
+        "query": "\"SELECT MIN('GT#1 Generator Loss by Power Factor Curve') FROM data\""
+    },
+    {
+        "input": "\"GT#1 Generator Power Factor Actual에서 가장 빈도가 높은 값을 찾아주세요.\",\n\"query\": \"SELECT 'GT#1 Generator Power Factor Actual', COUNT('GT#1 Generator Power Factor Actual') AS frequency FROM data GROUP BY 'GT#1 Generator Power Factor Actual' ORDER BY frequency DESC LIMIT 1\"",
+        "query": "\"SELECT AVG('GT#1 Inlet Pressure Loss'), MAX('GT#1 Inlet Pressure Loss'), MIN('GT#1 Inlet Pressure Loss') FROM data\""
+    },
+    {
+        "input": "\"GT#1 Fuel Temperature의 중앙값을 구해주세요.\",\n\"query\": \"SELECT AVG('GT#1 Fuel Temperature') as median FROM (SELECT 'GT#1 Fuel Temperature' FROM data ORDER BY 'GT#1 Fuel Temperature' LIMIT 2 - (SELECT COUNT(*) FROM data) % 2 OFFSET (SELECT (COUNT(*) - 1) / 2 FROM data))\"",
+        "query": "\"SELECT datetime FROM data WHERE 'GT#1 Fuel Inlet Temperature' = (SELECT MAX('GT#1 Fuel Inlet Temperature') FROM data)\""
+    },
+    {
+        "input": "\"C-TBQC-035 In air tot press tr 의 값이 100보다 큰 데이터의 개수를 구해주세요.\",\n\"query\": \"SELECT COUNT(*) FROM data WHERE 'S-TBQC-035 In air tot press tr' > 100\"",
+        "query": "\"SELECT datetime FROM data WHERE 'Max Vibration' = (SELECT MIN('Max Vibration') FROM data)\""
+    }
+]

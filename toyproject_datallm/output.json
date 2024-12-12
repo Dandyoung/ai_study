@@ -1,0 +1,4 @@
+{
+    "output": "3월 24일 데이터에 대한 분 단위 변환 결과는 최소 값이 0.0, 최대 값이 99.14782, 평균 값이 49.57391 입니다.",
+    "pandas": "df.set_index('datetime').resample('T').mean().describe()"
+}
