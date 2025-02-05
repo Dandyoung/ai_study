@@ -1,3 +1,6 @@
+
+# https://www.linkedin.com/posts/vikrantchatole_ai-machinelearning-naturallanguageprocessing-ugcPost-7187097872096464896-Nmqp/
+
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
