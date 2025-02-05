@@ -1,4 +1,5 @@
 .env
 myenv/
+RL_env/
 .png
 .mp4
